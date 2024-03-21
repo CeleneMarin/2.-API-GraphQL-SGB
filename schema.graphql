@@ -1,0 +1,29 @@
+#coleccion de autores
+type Book {
+  id: ID!
+  title: String!
+  author: Author!
+  isbn: String!
+  publicationYear: Int!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  nationality: String!
+}
+
+type Loan {
+  id: ID!
+  book: Book!
+  user: String!
+  loanDate: String!
+  returnDate: String
+}
+
+type Query {
+  allBooks: [Book!]!
+  bookById(id: ID!): Book
+  allAuthors: [Author!]!
+  allLoans: [Loan!]!
+}
